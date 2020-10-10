@@ -17,9 +17,9 @@ export type HomeScreenProps = {
   navigation: HomeScreenNavigationProp;
 };
 
-export type LoginScreenRouteProp = RouteProp<StackParamList, "Home">;
+export type LoginScreenRouteProp = RouteProp<StackParamList, "Login">;
 
-export type LoginScreenNavigationProp = StackNavigationProp<StackParamList, "Home">;
+export type LoginScreenNavigationProp = StackNavigationProp<StackParamList, "Login">;
 
 export type LoginScreenProps = {
   route: LoginScreenRouteProp;
