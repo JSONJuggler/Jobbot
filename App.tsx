@@ -1,15 +1,20 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+// import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 // import { create } from "apisauce";
-import { State as AppState, StackParamList } from "./app";
-import { COLORS } from "./styles/styles";
+import { State as AppState, TabParamList } from "./app";
+import globalStyles, { COLORS } from "./styles/styles";
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 
-const Stack = createStackNavigator<StackParamList>();
+// const Stack = createStackNavigator<StackParamList>();
+const Tab = createMaterialBottomTabNavigator<TabParamList>();
 
 const App = () => {
   // const [state, setState] = React.useState<AppState>({
@@ -28,52 +33,64 @@ const App = () => {
   //     .then(response => response ? console.log(response.data) : null)
   //     .catch((err) => console.log(err))
   // }, [])
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    setIsAuthenticated((prev) => true)
+  };
 
   return (
     <>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+      <StatusBar barStyle="dark-content" />
+      {!isAuthenticated && <LoginScreen login={handleLogin} />}
+      {isAuthenticated && <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Home"
+          activeColor={COLORS.black}
+          inactiveColor={COLORS.white}
+          labeled={true}
+          shifting={true}
+          barStyle={{ backgroundColor: "#694fad" }}
+        >
 
-          <Stack.Screen
+          <Tab.Screen
             name="Home"
             component={HomeScreen}
             options={{
-              title: "Welcome"
+              tabBarLabel: "Home",
+              tabBarColor: COLORS.homeBar,
+              tabBarIcon: ({ color }) => (
+                <MaterialCommunityIcons name="home" color={color} size={26} />
+              ),
             }}
           />
 
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
+          <Tab.Screen
+            name="Profile"
+            component={ProfileScreen}
             options={{
-              title: "Jobbot",
-              headerStyle: {
-                backgroundColor: COLORS.main
-              },
-              headerTintColor: COLORS.white,
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
+              tabBarLabel: "My Jobs",
+              tabBarColor: COLORS.profileBar,
+              tabBarIcon: ({ color }) => (
+                <MaterialCommunityIcons name="bell" color={color} size={26} />
+              ),
             }}
           />
 
-          <Stack.Screen
+          <Tab.Screen
             name="Settings"
             component={SettingsScreen}
             options={{
-              title: "Settings",
-              headerStyle: {
-                backgroundColor: COLORS.main
-              },
-              headerTintColor: COLORS.white,
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
+              tabBarLabel: "Settings",
+              tabBarColor: COLORS.settingsBar,
+              tabBarIcon: ({ color }) => (
+                <MaterialCommunityIcons name="cog" color={color} size={26} />
+              ),
             }}
           />
 
-        </Stack.Navigator>
-      </NavigationContainer>
+        </Tab.Navigator>
+      </NavigationContainer>}
     </>
   );
 };

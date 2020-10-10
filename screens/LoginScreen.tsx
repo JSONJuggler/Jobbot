@@ -1,30 +1,42 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import globalStyles, { COLORS } from "../styles/styles"
-import { LoginScreenProps } from "../app";
 
-const LoginScreen = ({ navigation }: LoginScreenProps) => {
+type props = {
+  login: () => void;
+}
+
+const LoginScreen = ({ login }: props) => {
   return (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate("Settings")
-      }
-      style={[globalStyles.button, styles.button]}
-    >
-      <Text style={styles.buttonText}>
-        Go to the settings screen
-      </Text>
-    </TouchableOpacity>
+    <SafeAreaView style={[globalStyles.safeArea, styles.safeArea]}>
+      <View style={styles.container}>
+        <TouchableOpacity
+          onPress={login}
+          style={[globalStyles.button, styles.button]}
+        >
+          <Text style={styles.text}>
+            Log in
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: COLORS.main
-
+    backgroundColor: COLORS.homeBar,
   },
-  buttonText: {
-    color: COLORS.white
+  container: {
+    alignSelf: "center",
+    justifyContent: "center",
+    flex: 1
+  },
+  text: {
+    color: COLORS.black
+  },
+  safeArea: {
+    backgroundColor: COLORS.homeBackground
   }
 })
 
