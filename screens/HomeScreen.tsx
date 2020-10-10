@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from 'react-native';
+import React from "react";
+import { Button } from "react-native";
 import { HomeScreenProps } from "../app";
 
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
@@ -7,7 +7,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
     <Button
       title="Go to the settings screen"
       onPress={() =>
-        navigation.navigate('Settings')
+        navigation.navigate("Settings")
       }
     />
   );

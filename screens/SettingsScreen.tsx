@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   StyleSheet,
   ScrollView,
   View,
   Text,
-} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+} from "react-native";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const SettingsScreen = () => {
   return (

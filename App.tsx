@@ -1,8 +1,8 @@
-import 'react-native-gesture-handler';
-import React from 'react';
-import { StatusBar } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import "react-native-gesture-handler";
+import React from "react";
+import { StatusBar } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { create } from "apisauce";
 import { State as AppState, StackParamList } from "./app";
 import HomeScreen from "./screens/HomeScreen";
@@ -15,7 +15,7 @@ const App = () => {
     pages: "",
     api:
       create({
-        baseURL: 'https://jsonj-jobbie.herokuapp.com',
+        baseURL: "https://jsonj-jobbie.herokuapp.com",
       })
   })
 
@@ -23,7 +23,7 @@ const App = () => {
 
   React.useEffect(() => {
     api
-      .get('/api/jobs?jobTitle=pool')
+      .get("/api/jobs?jobTitle=pool")
       .then(response => response ? console.log(response.data) : null)
       .catch((err) => console.log(err))
   }, [])
@@ -35,7 +35,9 @@ const App = () => {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Welcome' }}
+            options={{
+              title: "Welcome"
+            }}
           />
           <Stack.Screen name="Settings" component={SettingsScreen} />
         </Stack.Navigator>

@@ -1,6 +1,6 @@
-import { RouteProp } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { ApisauceInstance } from 'apisauce';
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { ApisauceInstance } from "apisauce";
 
 export type StackParamList = {
   Home: undefined;
