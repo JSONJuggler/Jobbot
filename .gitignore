@@ -60,3 +60,5 @@ buck-out/
 *.swp
 *.swo
 *~
+package-lock.json
+Podfile.lock
