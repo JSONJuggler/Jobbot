@@ -188,7 +188,6 @@
 			children = (
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		F24713B3270F0A6F33DB962B /* Pods */ = {
@@ -783,6 +782,7 @@
 				DEVELOPMENT_TEAM = 3G9V5W992J;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Jobbot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -806,6 +806,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3G9V5W992J;
 				INFOPLIST_FILE = Jobbot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
