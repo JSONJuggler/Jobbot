@@ -14,12 +14,10 @@ type props = {
 
 const LoginScreen = ({login}: props) => {
   return (
-    <SafeAreaView style={[globalStyles.safeArea, styles.safeArea]}>
+    <SafeAreaView style={globalStyles.safeArea}>
       <View style={styles.container}>
-        <TouchableOpacity
-          onPress={login}
-          style={[globalStyles.button, styles.button]}>
-          <Text style={styles.text}>Log in</Text>
+        <TouchableOpacity onPress={login} style={globalStyles.button}>
+          <Text style={globalStyles.text}>Log in</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
