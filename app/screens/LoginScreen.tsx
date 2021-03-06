@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -7,14 +7,24 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {useForm, Controller} from 'react-hook-form';
 import globalStyles, {COLORS} from '../styles';
 
-type props = {
-  login: () => void;
+type LoginScreenProps = {};
+
+type FormData = {
+  email: string;
+  password: string;
 };
 
-const LoginScreen = ({login}: props) => {
-  const [value, onChangeText] = useState('');
+const LoginScreen: React.FC<LoginScreenProps> = () => {
+  const {control, handleSubmit, errors} = useForm<FormData>({
+    defaultValues: {email: '', password: ''},
+  });
+
+  const onSubmit = ({email, password}: FormData) => {
+    console.log(email, password);
+  };
 
   return (
     <SafeAreaView style={globalStyles.safeArea}>
@@ -26,20 +36,46 @@ const LoginScreen = ({login}: props) => {
           </Text>
         </View>
 
-        <TextInput
-          style={globalStyles.textInput}
-          onChangeText={(text: string) => onChangeText(text)}
-          value={value}
-          placeholder="Email"
+        <Text style={[globalStyles.text, styles.subText]}>Email/Username</Text>
+        <Controller
+          control={control}
+          render={({onChange, onBlur, value}) => (
+            <TextInput
+              style={globalStyles.textInput}
+              onBlur={onBlur}
+              onChangeText={(value) => onChange(value)}
+              value={value}
+              placeholder="Email/Username"
+            />
+          )}
+          name="email"
+          rules={{required: true}}
         />
-        <TextInput
-          style={globalStyles.textInput}
-          onChangeText={(text: string) => onChangeText(text)}
-          value={value}
-          placeholder="Password"
-        />
+        {errors.email && (
+          <Text style={styles.errorText}>Email is required.</Text>
+        )}
 
-        <TouchableOpacity onPress={login} style={globalStyles.button}>
+        <Text style={[globalStyles.text, styles.subText]}>Password</Text>
+        <Controller
+          control={control}
+          render={({onChange, value}) => (
+            <TextInput
+              style={globalStyles.textInput}
+              onChangeText={(value) => onChange(value)}
+              value={value}
+              placeholder="Password"
+            />
+          )}
+          name="password"
+          rules={{required: true}}
+        />
+        {errors.password && (
+          <Text style={styles.errorText}>Password is required.</Text>
+        )}
+
+        <TouchableOpacity
+          onPress={handleSubmit(onSubmit)}
+          style={globalStyles.button}>
           <Text style={globalStyles.buttonText}>Log in</Text>
         </TouchableOpacity>
       </View>
@@ -57,6 +93,9 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     marginTop: 'auto',
     display: 'flex',
+  },
+  errorText: {
+    color: COLORS.error,
   },
   titleContainer: {
     flex: 0.5,

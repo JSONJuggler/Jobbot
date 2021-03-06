@@ -12,6 +12,7 @@ export const COLOR_GREEN_LIGHTEST = '#FCFCFC';
 export const COLOR_ORANGE = '#FDAA54';
 export const COLOR_ORANGE_LIGHTER = '#FDC58E';
 export const COLOR_ORANGE_LIGHTEST = '#FEE2C6';
+export const COLOR_RED = '#ff0000';
 
 export const COLORS = {
   lighterMain: COLOR_GREEN_DARK,
@@ -27,6 +28,7 @@ export const COLORS = {
   white: COLOR_WHITE,
   text: COLOR_BLACK,
   caption: COLOR_GRAY_DARKER,
+  error: COLOR_RED,
 };
 
 export default StyleSheet.create({

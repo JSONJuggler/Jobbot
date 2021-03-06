@@ -35,14 +35,10 @@ const App = () => {
   // }, [])
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleLogin = () => {
-    setIsAuthenticated(() => true);
-  };
-
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      {!isAuthenticated && <LoginScreen login={handleLogin} />}
+      {!isAuthenticated && <LoginScreen />}
       {isAuthenticated && (
         <NavigationContainer>
           <Tab.Navigator
