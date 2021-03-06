@@ -78,6 +78,9 @@ const LoginScreen: React.FC<LoginScreenProps> = () => {
           style={globalStyles.button}>
           <Text style={globalStyles.buttonText}>Log in</Text>
         </TouchableOpacity>
+        <Text style={[globalStyles.text, styles.subText]}>
+          Need an account? Sign up!
+        </Text>
       </View>
     </SafeAreaView>
   );
