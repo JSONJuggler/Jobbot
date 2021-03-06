@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
 import {HomeScreenProps} from '../App';
-import globalStyles, {COLORS} from '../styles/styles';
+import globalStyles, {COLORS} from '../styles';
 
 const HomeScreen = ({navigation}: HomeScreenProps) => {
   return (

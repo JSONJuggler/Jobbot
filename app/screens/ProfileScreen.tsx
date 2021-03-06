@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, ScrollView} from 'react-native';
-import globalStyles, {COLORS} from '../styles/styles';
+import globalStyles, {COLORS} from '../styles';
 import {ProfileScreenProps} from '../App';
 
 const ProfileScreen = ({navigation}: ProfileScreenProps) => {

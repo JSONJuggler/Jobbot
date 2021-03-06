@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, ScrollView, SafeAreaView, Text} from 'react-native';
-import globalStyles, {COLORS} from '../styles/styles';
+import globalStyles, {COLORS} from '../styles';
 
 const SettingsScreen = () => {
   return (

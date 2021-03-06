@@ -7,7 +7,7 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import { create } from "apisauce";
 import {State as AppState, TabParamList} from './App';
-import globalStyles, {COLORS} from './styles/styles';
+import globalStyles, {COLORS} from './styles';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -50,8 +50,7 @@ const App = () => {
             activeColor={COLORS.black}
             inactiveColor={COLORS.white}
             labeled={true}
-            shifting={true}
-            barStyle={{backgroundColor: '#694fad'}}>
+            shifting={true}>
             <Tab.Screen
               name="Home"
               component={HomeScreen}
