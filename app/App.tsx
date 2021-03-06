@@ -36,7 +36,7 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    setIsAuthenticated((prev) => true);
+    setIsAuthenticated(() => true);
   };
 
   return (

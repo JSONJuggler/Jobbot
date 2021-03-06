@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import manga from './manga';
+import user from './user';
 
 const rootReducer = combineReducers({
-  manga,
+  user,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
