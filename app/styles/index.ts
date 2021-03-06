@@ -16,7 +16,7 @@ export const COLOR_ORANGE_LIGHTEST = '#FEE2C6';
 export const COLORS = {
   lighterMain: COLOR_GREEN_DARK,
   main: COLOR_GRAY,
-  secondary: COLOR_ORANGE,
+  secondary: COLOR_GREEN,
   homeBar: COLOR_GREEN,
   homeBackground: COLOR_GREEN_LIGHT,
   profileBar: COLOR_ORANGE,
@@ -26,16 +26,18 @@ export const COLORS = {
   black: COLOR_BLACK,
   white: COLOR_WHITE,
   text: COLOR_BLACK,
+  caption: COLOR_GRAY_DARKER,
 };
 
 export default StyleSheet.create({
   button: {
     alignSelf: 'center',
     alignItems: 'center',
-    width: '60%',
+    width: '100%',
     margin: 10,
     padding: 10,
-    borderRadius: 15,
+    borderRadius: 10,
+    backgroundColor: COLORS.secondary,
   },
   safeArea: {
     flex: 1,
@@ -43,5 +45,15 @@ export default StyleSheet.create({
   },
   text: {
     color: COLORS.text,
+  },
+  buttonText: {
+    color: COLORS.white,
+  },
+  textInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 10,
+    margin: 10,
   },
 });
