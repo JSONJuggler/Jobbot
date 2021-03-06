@@ -25,19 +25,10 @@ const LoginScreen = ({login}: props) => {
 };
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: COLORS.homeBar,
-  },
   container: {
     alignSelf: 'center',
     justifyContent: 'center',
     flex: 1,
-  },
-  text: {
-    color: COLORS.black,
-  },
-  safeArea: {
-    backgroundColor: COLORS.homeBackground,
   },
 });
 
