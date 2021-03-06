@@ -16,6 +16,7 @@ export const COLOR_ORANGE_LIGHTEST = '#FEE2C6';
 export const COLORS = {
   lighterMain: COLOR_GREEN_DARK,
   main: COLOR_GRAY,
+  secondary: COLOR_ORANGE,
   homeBar: COLOR_GREEN,
   homeBackground: COLOR_GREEN_LIGHT,
   profileBar: COLOR_ORANGE,
@@ -24,6 +25,7 @@ export const COLORS = {
   settingsBackground: COLOR_GRAY,
   black: COLOR_BLACK,
   white: COLOR_WHITE,
+  text: COLOR_BLACK,
 };
 
 export default StyleSheet.create({
@@ -38,5 +40,8 @@ export default StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: COLORS.main,
+  },
+  text: {
+    color: COLORS.text,
   },
 });
