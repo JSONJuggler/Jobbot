@@ -3,22 +3,22 @@ import {MaterialBottomTabNavigationProp} from '@react-navigation/material-bottom
 import {ApisauceInstance} from 'apisauce';
 
 export type TabParamList = {
-  Home: undefined;
+  Search: undefined;
   Login: undefined;
   Profile: undefined;
   Settings: undefined;
 };
 
-export type HomeScreenRouteProp = RouteProp<TabParamList, 'Home'>;
+export type SearchScreenRouteProp = RouteProp<TabParamList, 'Search'>;
 
-export type HomeScreenNavigationProp = MaterialBottomTabNavigationProp<
+export type SearchScreenNavigationProp = MaterialBottomTabNavigationProp<
   TabParamList,
-  'Home'
+  'Search'
 >;
 
-export type HomeScreenProps = {
-  route: HomeScreenRouteProp;
-  navigation: HomeScreenNavigationProp;
+export type SearchScreenProps = {
+  route: SearchScreenRouteProp;
+  navigation: SearchScreenNavigationProp;
 };
 
 export type LoginScreenRouteProp = RouteProp<TabParamList, 'Login'>;

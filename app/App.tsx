@@ -10,7 +10,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import configureStore from './redux/configureStore';
 import {State as AppState, TabParamList} from './App';
 import globalStyles, {COLORS} from './styles';
-import HomeScreen from './screens/HomeScreen';
+import SearchScreen from './screens/SearchScreen';
 import LoginScreen from './screens/LoginScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import SettingsScreen from './screens/SettingsScreen';
@@ -46,20 +46,20 @@ const App = () => {
         {isAuthenticated && (
           <NavigationContainer>
             <Tab.Navigator
-              initialRouteName="Home"
+              initialRouteName="Search"
               activeColor={COLORS.black}
               inactiveColor={COLORS.white}
               labeled={true}
               shifting={true}>
               <Tab.Screen
-                name="Home"
-                component={HomeScreen}
+                name="Search"
+                component={SearchScreen}
                 options={{
-                  tabBarLabel: 'Home',
+                  tabBarLabel: 'Search',
                   tabBarColor: COLORS.main,
                   tabBarIcon: ({color}) => (
                     <MaterialCommunityIcons
-                      name="home"
+                      name="magnify"
                       color={color}
                       size={26}
                     />
@@ -75,7 +75,7 @@ const App = () => {
                   tabBarColor: COLORS.main,
                   tabBarIcon: ({color}) => (
                     <MaterialCommunityIcons
-                      name="bell"
+                      name="currency-usd"
                       color={color}
                       size={26}
                     />

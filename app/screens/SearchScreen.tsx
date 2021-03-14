@@ -1,13 +1,13 @@
 import React from 'react';
 import {Text, SafeAreaView, StyleSheet, View} from 'react-native';
-import {HomeScreenProps} from '../App';
+// import {SearchScreenProps} from '../App';
 import globalStyles, {COLORS} from '../styles';
 
-const HomeScreen = ({navigation}: HomeScreenProps) => {
+const SearchScreen = () => {
   return (
     <SafeAreaView style={[globalStyles.safeArea, styles.safeArea]}>
       <View style={styles.container}>
-        <Text style={styles.text}>This is the Home Screen</Text>
+        <Text style={styles.text}>This is the Search Screen</Text>
       </View>
     </SafeAreaView>
   );
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SearchScreen;
