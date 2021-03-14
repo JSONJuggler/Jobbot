@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   safeArea: {
-    backgroundColor: COLORS.homeBackground,
+    backgroundColor: COLORS.main,
   },
 });
 

@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   safeArea: {
-    backgroundColor: COLORS.settingsBar,
+    backgroundColor: COLORS.main,
   },
 });
 

@@ -36,7 +36,7 @@ const App = () => {
   //     .then(response => response ? console.log(response.data) : null)
   //     .catch((err) => console.log(err))
   // }, [])
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <>
@@ -56,7 +56,7 @@ const App = () => {
                 component={HomeScreen}
                 options={{
                   tabBarLabel: 'Home',
-                  tabBarColor: COLORS.homeBar,
+                  tabBarColor: COLORS.main,
                   tabBarIcon: ({color}) => (
                     <MaterialCommunityIcons
                       name="home"
@@ -72,7 +72,7 @@ const App = () => {
                 component={ProfileScreen}
                 options={{
                   tabBarLabel: 'My Jobs',
-                  tabBarColor: COLORS.profileBar,
+                  tabBarColor: COLORS.main,
                   tabBarIcon: ({color}) => (
                     <MaterialCommunityIcons
                       name="bell"
@@ -88,7 +88,7 @@ const App = () => {
                 component={SettingsScreen}
                 options={{
                   tabBarLabel: 'Settings',
-                  tabBarColor: COLORS.settingsBar,
+                  tabBarColor: COLORS.main,
                   tabBarIcon: ({color}) => (
                     <MaterialCommunityIcons
                       name="cog"
